@@ -1,16 +1,14 @@
-// Requis
 var gulp = require('gulp'); 
 const imagemin = require('gulp-imagemin');
+var pump = require('pump');
+var uglify = require('gulp-uglify');
 
 // Include plugins
-var plugins = require('gulp-load-plugins')(); // tous les plugins de package.json
+var plugins = require('gulp-load-plugins')(); // all plugins from package.json
 
-// Variables de chemins
-var source = './src'; // dossier de travail
-var destination = './dist'; // dossier à livrer
-var bootstrap_js = './bootstrap/assets/javascripts/bootstrap.min.js'
-
-/*CSS*/
+// Paths variables
+var source = './src'; // working directory
+var destination = './dist'; // published directory
 
 // "css" = sass + csscomb + cssbeautify + autoprefixer
 gulp.task('css', function () {
@@ -23,7 +21,7 @@ gulp.task('css', function () {
 });
 
 // "minify" = CSS minification
-gulp.task('minify', function () {
+gulp.task('minifyCSS', function () {
   return gulp.src(destination + '/assets/css/*.css')
     .pipe(plugins.csso())
     .pipe(plugins.rename({
@@ -51,6 +49,17 @@ return gulp.src(source + '/assets/j/*.js')
     .pipe(gulp.dest(destination + '/assets/j'));
 });
 
+//"uglifyJS" = JS minification
+gulp.task('uglifyJS', function (cb) {
+  pump([
+    gulp.src('destination' + '/assets/j/*.js'),
+    uglify(),
+    gulp.dest('destination' + '/assets/j')
+    ],
+    cb
+  );
+});
+
 // "critical" = critical inline CSS
 // gulp.task('critical', function() {
 //   return  gulp.src('/*.php')
@@ -68,7 +77,7 @@ return gulp.src(source + '/assets/j/*.js')
 gulp.task('build', ['css', 'img', 'copyfonts', 'copyjs']);
 
 // "prod" = Build + minify
-gulp.task('prod', ['css', 'img', 'copyfonts', 'copyjs', 'minify']);
+gulp.task('prod', ['css', 'copyjs', 'img', 'copyfonts', 'minifyCSS', 'uglifyJS']);
 
 // "watch" = Watching *scss
 gulp.task('watch', function () {
