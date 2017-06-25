@@ -8,6 +8,7 @@ var plugins = require('gulp-load-plugins')(); // tous les plugins de package.jso
 // Variables de chemins
 var source = './src'; // dossier de travail
 var destination = './dist'; // dossier à livrer
+var bootstrap_js = './bootstrap/assets/javascripts/bootstrap.min.js'
 
 /*CSS*/
 
@@ -49,21 +50,22 @@ gulp.task('copyfonts', function() {
 // "copyjs" = JS
 gulp.task('copyjs', function() {
 return gulp.src(source + '/assets/j/*.js')
+    .pipe(bootstrap_js.dest(destination + '/assets/j'));
     .pipe(gulp.dest(destination + '/assets/j'));
 });
 
 // Tâche "critical" = critical inline CSS
-gulp.task('critical', function() {
-  return  gulp.src('/*.php')
-    .pipe(critical({
-      base: destination,
-      inline: true,
-      width: 320,
-      height: 480,
-      minify: true
-    }))
-    .pipe(gulp.dest(destination));
-});
+// gulp.task('critical', function() {
+//   return  gulp.src('/*.php')
+//     .pipe(critical({
+//       base: destination,
+//       inline: true,
+//       width: 320,
+//       height: 480,
+//       minify: true
+//     }))
+//     .pipe(gulp.dest(destination));
+// });
 
 // "build"
 gulp.task('build', ['css', 'img', 'copyfonts', 'copyjs']);
