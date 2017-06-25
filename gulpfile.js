@@ -50,7 +50,7 @@ gulp.task('copyfonts', function() {
 // "copyjs" = JS
 gulp.task('copyjs', function() {
 return gulp.src(source + '/assets/j/*.js')
-    .pipe(bootstrap_js.dest(destination + '/assets/j'));
+    .pipe(bootstrap_js.dest(destination + '/assets/j'))
     .pipe(gulp.dest(destination + '/assets/j'));
 });
 
