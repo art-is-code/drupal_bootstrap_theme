@@ -1,5 +1,5 @@
-name = Art is theme
-description = Bootstrap Sass gulpified theme
+name = Bootstrap 3 Drupal
+description = Gulp powered Bootstrap Sass Drupal theme to start a project
 package = Art is code
 version = VERSION
 core = 7.x
@@ -7,8 +7,8 @@ core = 7.x
 stylesheets[all][] = dist/assets/css/styles.css
 ;stylesheets[print][] = css/print.css
 
-;scripts[] = dist/assets/js/jquery.matchHeight.js
-;scripts[] = dist/assets/js/main.js
+;scripts[] = dist/assets/j/jquery.matchHeight.js
+;scripts[] = dist/assets/j/main.js
 
 regions[help] = Help
 
