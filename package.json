@@ -1,0 +1,27 @@
+{
+  "name": "artisbase",
+  "version": "1.0.0",
+  "homepage": "http://a.rtisco.de",
+  "author": [
+    "Sébastien Fauveau, Art is code"
+  ],
+  "description": "Implémentation du framework KNACSS et automatisation youpi",
+  "devDependencies": {
+    "critical": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssbeautify": "latest",
+    "gulp-csscomb": "latest",
+    "gulp-csso": "latest",
+    "gulp-html-extend": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-uncss": "latest",
+    "gulp-bootstrap-sass": "latest"
+  }
+}

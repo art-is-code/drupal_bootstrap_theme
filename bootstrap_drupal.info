@@ -1,0 +1,15 @@
+name = Art is theme
+description = Bootstrap Sass gulpified theme
+package = Art is code
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = dist/assets/css/styles.css
+;stylesheets[print][] = css/print.css
+
+;scripts[] = dist/assets/js/jquery.matchHeight.js
+;scripts[] = dist/assets/js/main.js
+
+regions[help] = Help
+
+regions[content] = Content
