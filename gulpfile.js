@@ -22,7 +22,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest(destination + '/assets/css/'));
 });
 
-// "minify" = minification CSS (destination -> destination)
+// "minify" = CSS minification
 gulp.task('minify', function () {
   return gulp.src(destination + '/assets/css/*.css')
     .pipe(plugins.csso())
@@ -32,9 +32,7 @@ gulp.task('minify', function () {
     .pipe(gulp.dest(destination + '/assets/css/'));
 });
 
-/*Images*/
-
-// "img" = Images optimisées
+// "img" = Optimize images
 gulp.task('img', function () {
   return gulp.src(source + '/assets/i/*.{png,jpg,jpeg,gif,svg}')
     .pipe(imagemin())
@@ -50,11 +48,10 @@ gulp.task('copyfonts', function() {
 // "copyjs" = JS
 gulp.task('copyjs', function() {
 return gulp.src(source + '/assets/j/*.js')
-    .pipe(bootstrap_js.dest(destination + '/assets/j'))
     .pipe(gulp.dest(destination + '/assets/j'));
 });
 
-// Tâche "critical" = critical inline CSS
+// "critical" = critical inline CSS
 // gulp.task('critical', function() {
 //   return  gulp.src('/*.php')
 //     .pipe(critical({
@@ -73,10 +70,10 @@ gulp.task('build', ['css', 'img', 'copyfonts', 'copyjs']);
 // "prod" = Build + minify
 gulp.task('prod', ['css', 'img', 'copyfonts', 'copyjs', 'minify']);
 
-// "watch" = je surveille *scss
+// "watch" = Watching *scss
 gulp.task('watch', function () {
-  gulp.watch(source + '/assets/sass/*.scss', ['build']);
+  gulp.watch(source + '/assets/sass/*.scss', ['prod']);
 });
 
-// Tâche par défaut
-gulp.task('default', ['build', 'watch']);
+// Default task
+gulp.task('default', ['prod', 'watch']);

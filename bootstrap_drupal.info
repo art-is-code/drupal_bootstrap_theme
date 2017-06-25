@@ -8,7 +8,6 @@ stylesheets[all][] = dist/assets/css/styles.min.css
 ;stylesheets[print][] = css/print.css
 
 ;scripts[] = dist/assets/j/jquery.matchHeight.js
-scripts[] = dist/assets/j/bootstrap.min.js
 scripts[] = dist/assets/j/main.js
 
 regions[help] = Help
