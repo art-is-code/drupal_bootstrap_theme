@@ -1,11 +1,15 @@
 {
-  "name": "artisbase",
-  "version": "1.0.0",
-  "homepage": "http://a.rtisco.de",
+  "name": "drupal_bootstrap",
+  "version": "1.1",
+  "homepage": "http://www.artiscode.fr",
   "author": [
-    "Sébastien Fauveau, Art is code"
+    "art is code"
   ],
-  "description": "Implémentation du framework KNACSS et automatisation youpi",
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:art-is-code/drupal_bootstrap_theme.git"
+  },
+  "description": "Gulpifying the usual front end stuff dude",
   "devDependencies": {
     "critical": "latest",
     "gulp": "latest",
@@ -21,7 +25,6 @@
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "gulp-uncss": "latest",
-    "gulp-bootstrap-sass": "latest"
+    "gulp-uncss": "latest"
   }
 }
