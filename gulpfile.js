@@ -53,19 +53,8 @@ return gulp.src(source + '/assets/j/*.js')
     .pipe(gulp.dest(destination + '/assets/j'));
 });
 
-//"uglifyJS" = JS minification
-gulp.task('uglifyJS', function (cb) {
-  pump([
-    gulp.src(destination + '/assets/j/*.js'),
-    uglify(),
-    gulp.dest(destination + '/assets/j')
-    ],
-    cb
-  );
-});
-
 // "render" = Build the result
-gulp.task('render', ['css', 'copyjs', 'img', 'copyfonts', 'uglifyJS']);
+gulp.task('render', ['css', 'copyjs', 'img', 'copyfonts']);
 
 // "watch" = Watching *scss
 gulp.task('watch', function () {
