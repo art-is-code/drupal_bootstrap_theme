@@ -1,11 +1,6 @@
-# drupal_bootstrap_theme
+# A blank Drupal 7.x Theme using Bootstrap 3, Sass and Gulp
 
-name = Bootstrap 3 Drupal
+# Usage
 
-description = Gulp powered Bootstrap Sass Drupal theme to start a project
-
-package = Art is code
-
-version = VERSION
-
-core = 7.x
+1. Start by firing <code>npm install</code> command in the directory to install dependencies
+2. Then type <code>gulp</code> to start monitoring and compiling code in the /dist folder.
