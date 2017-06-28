@@ -9,6 +9,7 @@
       "type": "git",
       "url": "git@github.com:art-is-code/drupal_bootstrap_theme.git"
   },
+  "license": "WTFPL",
   "description": "Gulpifying the usual front end stuff dude",
   "devDependencies": {
     "critical": "latest",
