@@ -3,7 +3,7 @@
 /**
  * Add body classes if certain regions have content.
  
-function bootstrap_drupal_preprocess_html(&$variables) {
+function bootstrap_drupal_theme_preprocess_html(&$variables) {
 
 }
 */
@@ -11,7 +11,7 @@ function bootstrap_drupal_preprocess_html(&$variables) {
 /**
  * Override or insert variables into the page template.
  
-function bootstrap_drupal_preprocess_page(&$variables) {
+function bootstrap_drupal_theme_preprocess_page(&$variables) {
   
   // $menu_block_pied = module_invoke('menu_block', 'block_view', 1);
   // $variables['menu_pied'] = render($menu_block_pied['content']);  
@@ -31,7 +31,7 @@ function bootstrap_drupal_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_maintenance_page().
  */
-// function bootstrap_drupal_preprocess_maintenance_page(&$variables) {
+// function bootstrap_drupal_theme_preprocess_maintenance_page(&$variables) {
 //   // By default, site_name is set to Drupal if no db connection is available
 //   // or during site installation. Setting site_name to an empty string makes
 //   // the site and update pages look cleaner.
@@ -46,7 +46,7 @@ function bootstrap_drupal_preprocess_page(&$variables) {
 /**
  * Override or insert variables into the node template.
  */
-function bootstrap_drupal_preprocess_node(&$vars) {
+function bootstrap_drupal_theme_preprocess_node(&$vars) {
   
   // if ($vars['view_mode'] == 'full' && node_is_page($vars['node'])) {
   //   $vars['classes_array'][] = 'node-full';
@@ -79,14 +79,14 @@ function bootstrap_drupal_preprocess_node(&$vars) {
 /**
  * Override or insert variables into the block template.
  */
-// function bootstrap_drupal_preprocess_block(&$variables) {
+// function bootstrap_drupal_theme_preprocess_block(&$variables) {
   
 // }
 
 /**
  * Implements theme_field__field_type().
  */
-// function bootstrap_drupal_field__taxonomy_term_reference($variables) {
+// function bootstrap_drupal_theme_field__taxonomy_term_reference($variables) {
 //   $output = '';
 
 //   // Render the label, if it's not hidden.
@@ -120,7 +120,7 @@ function bootstrap_drupal_preprocess_node(&$vars) {
  * @see menu_local_tasks()
  */
 
-// function bootstrap_drupal_menu_local_tasks(&$variables) {
+// function bootstrap_drupal_theme_menu_local_tasks(&$variables) {
 //     $output = '';
 
 //     if (!empty($variables['primary'])) {
@@ -140,7 +140,7 @@ function bootstrap_drupal_preprocess_node(&$vars) {
 // }
 
 /* Modifier le sélecteur de langue */
-// function bootstrap_drupal_links__locale_block($variables) {
+// function bootstrap_drupal_theme_links__locale_block($variables) {
 //   $links = $variables['links'];
 //   $attributes = $variables['attributes'];
 //   $attributes['class'][] = 'list-inline';
