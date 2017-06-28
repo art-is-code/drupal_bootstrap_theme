@@ -15,16 +15,7 @@ function bootstrap_drupal_theme_preprocess_page(&$variables) {
   
   // $menu_block_pied = module_invoke('menu_block', 'block_view', 1);
   // $variables['menu_pied'] = render($menu_block_pied['content']);  
-
-  if(arg(0) == 'node' && is_numeric(arg(1))) { 
-
-    $nid = arg(1);
-
-    if($variables['page']['content']['system_main']['nodes'][$nid]['#bundle'] == 'article'):
-
-      $variables['is_article'] = TRUE;      
-
-    endif; 
+ 
 }
 */
 
